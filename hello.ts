@@ -7,9 +7,6 @@ async function run() {
   console.log('open github');
   await page.goto("http://github.com");
 
-  console.log('save a screenshot');
-  await page.screenshot({path: 'screenshots/github.png'});
-
   await browser.close();
 }
 
