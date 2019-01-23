@@ -2,12 +2,11 @@ import * as puppeteer from 'puppeteer';
 import {Page} from "puppeteer";
 import {LoadEvent} from "puppeteer";
 
-async function clickAndWaitForEvent(page: Page, linkId: string, event: LoadEvent) {
+async function clickAndWaitForEvent(page: Page, hash: string, event: LoadEvent) {
   console.log(`----- clickAndWaitForEvent: ${event} -----`);
-  return Promise.all([
-    page.click(linkId),
-    page.waitForNavigation({waitUntil: event})
-  ])
+  await page.goto(`http://localhost:8989/index.html${hash}`, {
+    waitUntil: event
+  })
 }
 
 async function run() {
@@ -18,10 +17,10 @@ async function run() {
 
   await page.goto("http://localhost:8989/index.html");
 
-  await clickAndWaitForEvent(page, '#link1', 'domcontentloaded');
-  await clickAndWaitForEvent(page, '#link2', 'load');
-  await clickAndWaitForEvent(page, '#link3', 'networkidle2');
-  await clickAndWaitForEvent(page, '#link4', 'networkidle0');
+  await clickAndWaitForEvent(page, '#section1', 'domcontentloaded');
+  await clickAndWaitForEvent(page, '#section2', 'load');
+  await clickAndWaitForEvent(page, '#section3', 'networkidle2');
+  await clickAndWaitForEvent(page, '#section4', 'networkidle0');
 
   await browser.close();
 }

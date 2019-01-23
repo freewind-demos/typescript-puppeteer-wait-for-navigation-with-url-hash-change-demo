@@ -1,5 +1,5 @@
-TypeScript Puppeteer Wait For Navigation With Link to Section of Page Demo
-==========================================================================
+TypeScript Puppeteer Wait for Navigation with Url Hash Change Demo
+==================================================================
 
 ```
 npm install -g puppeteer
