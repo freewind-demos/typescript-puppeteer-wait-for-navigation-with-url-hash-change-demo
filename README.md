@@ -1,6 +1,8 @@
 TypeScript Puppeteer Wait for Navigation with Url Hash Change Demo
 ==================================================================
 
+I disabled "/favicon.ico" requests in 'index.html' to avoid unexpected requests.
+
 ```
 npm install -g puppeteer
 npm run demo
