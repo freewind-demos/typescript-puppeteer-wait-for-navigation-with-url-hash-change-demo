@@ -5,6 +5,7 @@ I disabled "/favicon.ico" requests in 'index.html' to avoid unexpected requests.
 
 ```
 npm install -g puppeteer
+npm run server
 npm run demo
 ```
 
